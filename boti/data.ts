@@ -22,7 +22,7 @@ export const resources: Resource[] = [
     id: 'ai-1',
     slug: 'resource-ai-1',
     name: 'Neural Writer Pro', // Название сайта
-    logo: 'https://picsum.photos/id/101/200/200', // Ссылка на логотип
+    logo: '/images/Elegant Bedroom Portrait.webp
     rating: 4.9, // Рейтинг (число)
     externalUrl: 'https://example.com', // Ваша партнерская ссылка
     category: 'ai', // ID категории (должен совпадать с id из списка выше)
