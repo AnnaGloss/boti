@@ -10,10 +10,10 @@ const Home: React.FC = () => {
       {/* Hero Block */}
       <section className="text-center py-12 md:py-20 bg-gradient-to-b from-indigo-50/50 to-transparent rounded-3xl px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 max-w-4xl mx-auto leading-[1.1]">
-          Каталог экспертных обзоров цифровых ресурсов
+          Каталог экспертных обзоров ботов раздеваторов
         </h1>
         <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Ориентируйтесь в сложном мире SaaS и цифровых инструментов с помощью нашей аналитической витрины. Мы отбираем только эффективные платформы для вашего роста.
+          Ориентируйтесь в сложном мире платных и бесплатных ботов раздеваторов онлайн (веб-версии) и ии раздеваторах в тг с помощью нашей аналитической витрины. Мы отбираем только рабочие и проверенные платформы.
         </p>
       </section>
 
