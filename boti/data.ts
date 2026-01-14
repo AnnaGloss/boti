@@ -1,6 +1,7 @@
 
 import { Resource, Category } from './types';
 
+// 1. РЕДАКТИРОВАНИЕ КАТЕГОРИЙ
 export const categories: Category[] = [
   { id: 'ai', name: 'Нейросети и AI', description: 'Лучшие инструменты на базе искусственного интеллекта для работы и творчества.' },
   { id: 'design', name: 'Дизайн и Графика', description: 'Профессиональное ПО для дизайнеров, иллюстраторов и UI/UX специалистов.' },
@@ -14,49 +15,127 @@ export const categories: Category[] = [
   { id: 'security', name: 'Безопасность', description: 'Антивирусы, VPN и системы защиты корпоративных данных.' }
 ];
 
-// Helper to generate resources to ensure a "long" page
-const generateResources = (): Resource[] => {
-  const res: Resource[] = [];
-  const baseReview = {
-    intro: 'Это подробный обзор одного из лидирующих решений в своей категории. Мы протестировали функционал и оценили удобство использования.',
-    fullDescription: 'Данный сервис предоставляет комплексный набор инструментов для решения бизнес-задач. В ходе нашего тестирования платформа показала высокую стабильность и отличную скорость работы. Интерфейс переведен на несколько языков, включая русский, что делает порог вхождения минимальным для новых пользователей.',
-    advantages: [
-      'Высокая скорость работы',
-      'Интуитивно понятный интерфейс',
-      'Регулярные обновления',
-      'Отличная техподдержка'
-    ],
-    targetAudience: 'Профессионалы, малый и средний бизнес, а также энтузиасты, стремящиеся к автоматизации своих процессов.',
-    summary: 'На сегодняшний день это одно из лучших предложений на рынке по соотношению цены и качества.',
-    parameters: [
-      { label: 'Язык', value: 'Русский / English' },
-      { label: 'Пробный период', value: '14 дней' },
-      { label: 'Сложность', value: 'Низкая' }
-    ]
-  };
-
-  categories.forEach((cat, catIdx) => {
-    for (let i = 1; i <= 10; i++) {
-      const id = `${cat.id}-${i}`;
-      res.push({
-        id,
-        slug: `resource-${id}`,
-        name: `${cat.name} Инструмент #${i}`,
-        logo: `https://picsum.photos/id/${(catIdx * 10) + i + 100}/200/200`,
-        rating: 4 + Math.random(),
-        externalUrl: 'https://example.com',
-        category: cat.id,
-        shortDescription: `Профессиональное решение в категории ${cat.name.toLowerCase()}. Экономит время и повышает эффективность работы.`,
-        publishDate: '2024-05-20',
-        detailedReview: {
-          ...baseReview,
-          intro: `${cat.name} Инструмент #${i} — это современный взгляд на решение повседневных задач в сфере ${cat.name.toLowerCase()}.`
-        }
-      });
+// 2. РЕДАКТИРОВАНИЕ РЕСУРСОВ (ОФФЕРОВ)
+// Просто копируйте блоки { ... } ниже, чтобы добавить новые сайты
+export const resources: Resource[] = [
+  {
+    id: 'ai-1',
+    slug: 'resource-ai-1',
+    name: 'Neural Writer Pro', // Название сайта
+    logo: 'https://picsum.photos/id/101/200/200', // Ссылка на логотип
+    rating: 4.9, // Рейтинг (число)
+    externalUrl: 'https://example.com', // Ваша партнерская ссылка
+    category: 'ai', // ID категории (должен совпадать с id из списка выше)
+    shortDescription: 'Продвинутый генератор контента с поддержкой SEO и множества языков.', // Короткое описание
+    publishDate: '2024-05-20',
+    detailedReview: {
+      intro: 'Neural Writer Pro — это современный взгляд на создание текстов.', // Вводный текст обзора
+      fullDescription: 'Здесь вы можете написать очень длинный текст обзора. Он будет отображаться на отдельной странице.', // Полный текст
+      advantages: [
+        'Быстрая генерация',
+        'Высокое качество',
+        'Поддержка русского языка'
+      ],
+      targetAudience: 'Копирайтеры, маркетологи и владельцы сайтов.',
+      summary: 'Лучший выбор для тех, кто ценит время и качество контента.',
+      parameters: [
+        { label: 'Язык', value: 'Русский / English' },
+        { label: 'Цена', value: 'От $19/мес' },
+        { label: 'Сложность', value: 'Легко' }
+      ]
     }
-  });
-
-  return res;
-};
-
-export const resources: Resource[] = generateResources();
+  },
+  {
+    id: 'ai-2',
+    slug: 'resource-ai-2',
+    name: 'GPT Helper',
+    logo: 'https://picsum.photos/id/102/200/200',
+    rating: 4.7,
+    externalUrl: 'https://example.com',
+    category: 'ai',
+    shortDescription: 'Удобный ассистент для повседневных задач и кодинга.',
+    publishDate: '2024-05-21',
+    detailedReview: {
+      intro: 'Ваш личный помощник в мире искусственного интеллекта.',
+      fullDescription: 'Описание второго ресурса...',
+      advantages: ['Умный поиск', 'Помощь с кодом'],
+      targetAudience: 'Программисты и студенты.',
+      summary: 'Незаменимый инструмент для работы с информацией.',
+      parameters: [
+        { label: 'Язык', value: 'English' },
+        { label: 'Цена', value: 'Бесплатно' },
+        { label: 'Сложность', value: 'Средне' }
+      ]
+    }
+  },
+  {
+    id: 'ai-3',
+    slug: 'resource-ai-3',
+    name: 'GPT Helper',
+    logo: 'https://picsum.photos/id/102/200/200',
+    rating: 4.7,
+    externalUrl: 'https://example.com',
+    category: 'ai',
+    shortDescription: 'Удобный ассистент для повседневных задач и кодинга.',
+    publishDate: '2024-05-21',
+    detailedReview: {
+      intro: 'Ваш личный помощник в мире искусственного интеллекта.',
+      fullDescription: 'Описание второго ресурса...',
+      advantages: ['Умный поиск', 'Помощь с кодом'],
+      targetAudience: 'Программисты и студенты.',
+      summary: 'Незаменимый инструмент для работы с информацией.',
+      parameters: [
+        { label: 'Язык', value: 'English' },
+        { label: 'Цена', value: 'Бесплатно' },
+        { label: 'Сложность', value: 'Средне' }
+      ]
+    }
+  },
+  {
+    id: 'ai-4',
+    slug: 'resource-ai-4',
+    name: 'GPT Helper',
+    logo: 'https://picsum.photos/id/102/200/200',
+    rating: 4.7,
+    externalUrl: 'https://example.com',
+    category: 'ai',
+    shortDescription: 'Удобный ассистент для повседневных задач и кодинга.',
+    publishDate: '2024-05-21',
+    detailedReview: {
+      intro: 'Ваш личный помощник в мире искусственного интеллекта.',
+      fullDescription: 'Описание второго ресурса...',
+      advantages: ['Умный поиск', 'Помощь с кодом'],
+      targetAudience: 'Программисты и студенты.',
+      summary: 'Незаменимый инструмент для работы с информацией.',
+      parameters: [
+        { label: 'Язык', value: 'English' },
+        { label: 'Цена', value: 'Бесплатно' },
+        { label: 'Сложность', value: 'Средне' }
+      ]
+    }
+  },
+  {
+    id: 'ai-5',
+    slug: 'resource-ai-5',
+    name: 'GPT Helper',
+    logo: 'https://picsum.photos/id/102/200/200',
+    rating: 4.7,
+    externalUrl: 'https://example.com',
+    category: 'ai',
+    shortDescription: 'Удобный ассистент для повседневных задач и кодинга.',
+    publishDate: '2024-05-21',
+    detailedReview: {
+      intro: 'Ваш личный помощник в мире искусственного интеллекта.',
+      fullDescription: 'Описание второго ресурса...',
+      advantages: ['Умный поиск', 'Помощь с кодом'],
+      targetAudience: 'Программисты и студенты.',
+      summary: 'Незаменимый инструмент для работы с информацией.',
+      parameters: [
+        { label: 'Язык', value: 'English' },
+        { label: 'Цена', value: 'Бесплатно' },
+        { label: 'Сложность', value: 'Средне' }
+      ]
+    }
+  }
+  // Добавьте сюда еще 98 объектов по аналогии...
+];
